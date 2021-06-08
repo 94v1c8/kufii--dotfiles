@@ -13,5 +13,7 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%~%b $vcs_info_msg_0_ $ '
 PLUGINS="$HOME/dotfiles/plugins"
 
 alias jest='yarn test --no-graphql'
+alias identity-sms-code='cat "tmp/sms/$(ls tmp/sms/ | tail -1)" | grep -Eo "[0-9]{6}" | tail -1'
+alias identity-email-code='cat "tmp/letter_opener/$(ls tmp/letter_opener/ | tail -1)/plain.html" | grep -E "[0-9]{6}"'
 
 source "$PLUGINS/zsh-history-substring-search.zsh"
